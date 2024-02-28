@@ -1,4 +1,9 @@
 package cuentas;
+
+/**
+ * Clase de una Cuenta Bancaria
+ * @author eduar
+ */
 public class CCuenta {
 
 
@@ -11,7 +16,13 @@ public class CCuenta {
     {
     }
     
-    
+    /**
+     * 
+     * @param nom Significado Nombre del dueño de la cuenta
+     * @param cue Significado Identificado de la cuenta
+     * @param sal Significado Saldo de la cuenta
+     * @param tipo Significado Tipo de Interés
+     */
 
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
@@ -20,7 +31,10 @@ public class CCuenta {
         saldo=sal;
     }
 
-    
+    /**
+     * Todos los atributos encapsulados
+     * @return
+     */
     
     public String getNombre() {
 		return nombre;
@@ -75,6 +89,11 @@ public class CCuenta {
         return saldo;
     }
 
+	/**
+	 * La barrera para impedir que se pueda ingresar menos que 0
+	 * @param cantidad 
+	 * @throws Exception la cantidad no puede ser negativa
+	 */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -82,6 +101,11 @@ public class CCuenta {
         saldo = saldo + cantidad;
     }
 
+    /**
+     * Aqui para que no se pueda retirar una cantidad negativa y tampoco si no tenga saldo positivo.
+     * @param cantidad
+     * @throws Exception la cantidad de saldo tiene que ser positiva si la hay y cantidad a retirar mayor que 0 
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
